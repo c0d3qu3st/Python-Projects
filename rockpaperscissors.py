@@ -4,7 +4,7 @@ count_rock=0
 count_paper=0
 count_scissors=0
 
-def update_counts(user_input):
+def update_counts(user_input):#counts how many rock, paper, scissors have been played by the user
   turn=user_input
   global count_rock,count_paper,count_scissors 
   if turn==0:
@@ -14,21 +14,21 @@ def update_counts(user_input):
   if turn==2:
     count_scissors+=1
 
-def predict():
+def predict():#predicts good move based on basic human psychology using counts of rock paper scissor previously played
   global pred
-  if count_rock > count_paper and count_rock > count_scissors:
+  if count_rock > count_paper and count_rock > count_scissors:#user prefers rock
     pred = 0
-  elif count_paper > count_rock and count_paper > count_scissors:
+  elif count_paper > count_rock and count_paper > count_scissors:#user prefers paper
     pred = 1
-  elif count_scissors > count_rock and count_scissors > count_paper:
+  elif count_scissors > count_rock and count_scissors > count_paper:#user prefers scissors
     pred = 2
-  else:
+  else:#user preference cannot be decided
     pred= random.randint(0,2)
 
 player_score=0
 comp_score=0
 
-def update_scores(user_input):
+def update_scores(user_input):#score calculating function
   global player_score, comp_score
   predict()
   if user_input == 0:
