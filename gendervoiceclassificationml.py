@@ -1,10 +1,11 @@
 import pandas as pd
-train_df= pd.read_csv("gender-voice-train.csv")
-test_df= pd.read_csv("gender-voice-test.csv")
+train_df= pd.read_csv('gender-voice-train.csv')
+test_df= pd.read_csv('gender-voice-test.csv')
 
 print("The number of rows and columns in train dataframe", train_df.shape)
 print("The number of rows and columns in test dataframe", test_df.shape)
 
+#checking for null values
 res_df1=train_df.isnull()
 for i in res_df1:
   if i==True:
@@ -15,6 +16,7 @@ for k in res_df2:
   if k==True:
     print("The value is missing at: ",k)
 
+#counting the number of male and female labelled voices in the dataframe
 train_df_label= train_df.iloc[:,0]
 print("The count of 'female' and 'male' classes in the test dataframe: \n",train_df_label.value_counts())
 

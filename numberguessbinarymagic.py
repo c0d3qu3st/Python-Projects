@@ -1,5 +1,3 @@
-cards= [[],[],[],[],[],[]]
-
 def get_binary_digits(num):
   bn_nmbs=[]
   while num!=0:
@@ -9,8 +7,8 @@ def get_binary_digits(num):
     num=quot
   return bn_nmbs
 
-
 cards=[[] for i in range(6)]
+
 for n in range(1,64):
   bn_dgts= get_binary_digits(n)
   for i in range(len(bn_dgts)):
